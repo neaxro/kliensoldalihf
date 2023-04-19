@@ -5,10 +5,18 @@
     xmlns:local="using:Konyvkereso"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vm="using:Konyvkereso.ViewModel"
+    xmlns:c="using:Template10.Controls"
+    xmlns:controls="using:Template10.Controls"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid>
+    <Page.DataContext>
+        <vm:MainPageViewModel x:ConnectionId='2' x:Name="ViewModel"/>
+    </Page.DataContext>
 
+    <Grid>
+        <Button Content="Try api" Command="{ Binding TryApiCommand }"/>
     </Grid>
 </Page>
+

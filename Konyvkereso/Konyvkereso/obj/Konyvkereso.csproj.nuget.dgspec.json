@@ -10,7 +10,7 @@
         "projectUniqueName": "C:\\GIT\\Kliensoldali\\kliensoldalihf\\Konyvkereso\\Konyvkereso\\Konyvkereso.csproj",
         "projectName": "Konyvkereso",
         "projectPath": "C:\\GIT\\Kliensoldali\\kliensoldalihf\\Konyvkereso\\Konyvkereso\\Konyvkereso.csproj",
-        "packagesPath": "C:\\Users\\neaxr\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\Work\\.nuget\\packages\\",
         "outputPath": "C:\\GIT\\Kliensoldali\\kliensoldalihf\\Konyvkereso\\Konyvkereso\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
@@ -19,7 +19,7 @@
           "C:\\Program Files (x86)\\Microsoft SDKs\\UWPNuGetPackages\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\neaxr\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Work\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -42,6 +42,18 @@
             "Microsoft.NETCore.UniversalWindowsPlatform": {
               "target": "Package",
               "version": "[6.2.14, )"
+            },
+            "Microsoft.Xaml.Behaviors.Uwp.Managed": {
+              "target": "Package",
+              "version": "[2.0.1, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            },
+            "Template10": {
+              "target": "Package",
+              "version": "[1.1.12, )"
             }
           },
           "imports": [
