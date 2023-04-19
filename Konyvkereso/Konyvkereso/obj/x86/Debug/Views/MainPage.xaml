@@ -15,8 +15,52 @@
         <vm:MainPageViewModel x:ConnectionId='2' x:Name="ViewModel"/>
     </Page.DataContext>
 
+    <Page.Resources>
+        <CollectionViewSource
+            x:Key="BookViewModel"
+            Source="{Binding Results}"
+            ItemsPath="Books"
+            />
+    </Page.Resources>
+
     <Grid>
-        <Button Content="Try api" Command="{ Binding TryApiCommand }"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel
+            Grid.Row="0"
+            Orientation="Horizontal"
+            HorizontalAlignment="Center"
+            Padding="15">
+
+            <ComboBox x:ConnectionId='3'
+                x:Name="SearchCategory"
+                PlaceholderText="Pick search category"
+                MinWidth="200"
+                MaxWidth="400"
+                                                                          
+                SelectedIndex="0"
+                >
+                <x:String>Title</x:String>
+                <x:String>Author</x:String>
+            </ComboBox>
+            
+            <TextBox x:ConnectionId='4'
+                x:Name="SearchText"
+                PlaceholderText="Search..."
+                MinWidth="300"
+                MaxWidth="600"
+                Text="{Binding SearchText, Mode=TwoWay}"
+                />
+            
+            <Button Command="{ Binding TryApiCommand }">Search</Button>
+            
+        </StackPanel>
+
+
+        <StackPanel Grid.Row="1" Background="LightGray"></StackPanel>
     </Grid>
 </Page>
 

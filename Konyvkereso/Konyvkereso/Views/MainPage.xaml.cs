@@ -26,5 +26,24 @@ namespace Konyvkereso
         {
             this.InitializeComponent();
         }
+
+        private void SearchCategoryCombobox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            string category = (sender as ComboBox).SelectedItem.ToString();
+            switch (category)
+            {
+                case "Title":
+                    ViewModel.SearchCategory = Konyvkereso.ViewModel.MainPageViewModel.SearchCategories.Title;
+                    break;
+
+                case "Author":
+                    ViewModel.SearchCategory = Konyvkereso.ViewModel.MainPageViewModel.SearchCategories.Author;
+                    break;
+
+                default:
+                    ViewModel.SearchCategory = Konyvkereso.ViewModel.MainPageViewModel.SearchCategories.Title;
+                    break;
+            }
+        }
     }
 }

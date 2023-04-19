@@ -15,18 +15,40 @@ namespace Konyvkereso.ViewModel
     {
         public ObservableCollection<Docs> Results { get; set; } = new ObservableCollection<Docs>();
         private BookService bookService = new BookService();
-
         public DelegateCommand TryApiCommand { get; }
+        public enum SearchCategories { Title = 0, Author = 1 };
 
         public MainPageViewModel()
         {
             TryApiCommand = new DelegateCommand(Search);
         }
 
-        public async void Search()
+        private string _searchText = "";
+        public string SearchText
         {
-            //SearchByTitle("the lord of the rings");
-            SearchByAuthor("tolkien");
+            get { return _searchText; }
+            set { _searchText = value; }
+        }
+
+        private SearchCategories _searchCategory;
+        public SearchCategories SearchCategory
+        {
+            get { return _searchCategory; }
+            set { _searchCategory = value; }
+        }
+
+        public void Search()
+        {
+            switch (SearchCategory)
+            {
+                case SearchCategories.Title:
+                    SearchByTitle(SearchText);
+                    break;
+
+                case SearchCategories.Author:
+                    SearchByAuthor(SearchText);
+                    break;
+            }            
         } 
 
         public async void SearchByTitle(string title)
