@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Template10.Mvvm;
+using Windows.ApplicationModel.Activation;
 
 namespace Konyvkereso.ViewModel
 {
@@ -19,15 +20,32 @@ namespace Konyvkereso.ViewModel
 
         public MainPageViewModel()
         {
-            TryApiCommand = new DelegateCommand(TrySearch);
+            TryApiCommand = new DelegateCommand(Search);
         }
 
-        public async void TrySearch()
+        public async void Search()
+        {
+            //SearchByTitle("the lord of the rings");
+            SearchByAuthor("tolkien");
+        } 
+
+        public async void SearchByTitle(string title)
         {
             Results.Clear();
-            var searchResult = await bookService.getBookWithTitleAsynch("the lord of the rings");
+            var searchResult = await bookService.getBookByTitleAsynch(title);
 
             foreach(var item in searchResult.Docs)
+            {
+                Results.Add(item);
+            }
+        }
+
+        public async void SearchByAuthor(string author)
+        {
+            Results.Clear();
+            var searchResult = await bookService.getBookByAuthorAsynch(author);
+
+            foreach (var item in searchResult.Docs)
             {
                 Results.Add(item);
             }

@@ -30,13 +30,13 @@
     <AppXManifest Include="C:\GIT\Kliensoldali\kliensoldalihf\Konyvkereso\Konyvkereso\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2023-04-19T18:48:54.246</Modified>
+      <Modified>2023-04-19T19:04:45.401</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\GIT\Kliensoldali\kliensoldalihf\Konyvkereso\Konyvkereso\bin\x86\Debug\Konyvkereso.exe">
       <PackagePath>entrypoint\Konyvkereso.exe</PackagePath>
-      <Modified>2023-04-19T18:48:53.616</Modified>
+      <Modified>2023-04-19T19:04:44.991</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Work\.nuget\packages\microsoft.xaml.behaviors.uwp.managed\2.0.1\lib\uap10.0\Microsoft.Xaml.Interactions.dll">
       <PackagePath>Microsoft.Xaml.Interactions.dll</PackagePath>
@@ -114,11 +114,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\GIT\Kliensoldali\kliensoldalihf\Konyvkereso\Konyvkereso\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2023-04-19T18:48:53.569</Modified>
+      <Modified>2023-04-19T19:04:44.955</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\GIT\Kliensoldali\kliensoldalihf\Konyvkereso\Konyvkereso\bin\x86\Debug\Views\MainPage.xbf">
       <PackagePath>Views\MainPage.xbf</PackagePath>
-      <Modified>2023-04-19T18:48:53.570</Modified>
+      <Modified>2023-04-19T19:04:44.955</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.22621.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -126,11 +126,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\GIT\Kliensoldali\kliensoldalihf\Konyvkereso\Konyvkereso\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2023-04-19T18:24:51.728</Modified>
+      <Modified>2023-04-19T19:01:10.154</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\GIT\Kliensoldali\kliensoldalihf\Konyvkereso\Konyvkereso\bin\x86\Debug\Core\Konyvkereso.exe">
       <PackagePath>Konyvkereso.exe</PackagePath>
-      <Modified>2023-04-19T18:48:54.238</Modified>
+      <Modified>2023-04-19T19:04:45.399</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

@@ -24,10 +24,17 @@ namespace Konyvkereso.Service
             }
         }
 
-        public async Task<SearchResult> getBookWithTitleAsynch(string title)
+        public async Task<SearchResult> getBookByTitleAsynch(string title)
         {
             Uri titleSearchUri = new Uri(BooksApiUrl, $"/search.json?title={title}");
             SearchResult result = await GetAsync<SearchResult>(titleSearchUri);
+            return result;
+        }
+
+        public async Task<SearchResult> getBookByAuthorAsynch(string author)
+        {
+            Uri authorSearchUri = new Uri(BooksApiUrl, $"/search.json?author={author}");
+            SearchResult result = await GetAsync<SearchResult>(authorSearchUri);
             return result;
         }
     }
