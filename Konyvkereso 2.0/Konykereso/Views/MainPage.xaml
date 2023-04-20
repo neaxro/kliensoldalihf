@@ -17,7 +17,7 @@
 
     <Page.Resources>
         <CollectionViewSource
-            x:Key="BookViewModel"
+            x:Key="SearchResults"
             Source="{Binding Results}"
             ItemsPath="Books"
             />
@@ -62,10 +62,9 @@
         <!-- ADATOK LISTAZASA MASODIK SORBA -->
         <GridView 
            Grid.Row="1"
-            ItemsSource="{Binding Results}"
+            ItemsSource="{Binding Source={StaticResource SearchResults}}"
             IsItemClickEnabled="True"
-            ItemClick="BookGroups_ItemClicked"
-            >
+            ItemClick="BookGroups_ItemClicked">
 
             <GridView.ItemTemplate>
                 <DataTemplate>

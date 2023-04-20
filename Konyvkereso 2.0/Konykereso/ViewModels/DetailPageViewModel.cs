@@ -14,18 +14,19 @@ namespace Konyvkereso.ViewModels
     {
         private readonly BookService bookService = new BookService();
 
-        private Docs _book;
-        public Docs Book
+        private BookDetail _book;
+        public BookDetail Book
         {
             get { return _book; }
-            set { _book = value; }
+            set { Set(ref _book, value); }
         }
 
-        public override Task OnNavigatedToAsync(object parameter, NavigationMode mode, IDictionary<string, object> state)
+        public override async Task OnNavigatedToAsync(object parameter, NavigationMode mode, IDictionary<string, object> state)
         {
-            string bookPath = (string)parameter;
+            string bookKey = (string)parameter;
+            Book = await bookService.getDetailedBookInfo(bookKey);
 
-            return base.OnNavigatedToAsync(parameter, mode, state);
+            await base.OnNavigatedToAsync(parameter, mode, state);
         }
     }
 }

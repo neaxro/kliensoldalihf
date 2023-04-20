@@ -37,5 +37,12 @@ namespace Konyvkereso.Services
             SearchResult result = await GetAsync<SearchResult>(authorSearchUri);
             return result;
         }
+
+        public async Task<BookDetail> getDetailedBookInfo(string key)
+        {
+            Uri detailedBookUri = new Uri(BooksApiUrl, String.Format("{0}.json", key));
+            BookDetail result = await GetAsync<BookDetail>(detailedBookUri);
+            return result;
+        }
     }
 }

@@ -15,11 +15,19 @@
         <vm:DetailPageViewModel x:ConnectionId='2' x:Name="ViewModel"/>
     </Page.DataContext>
 
-    <Grid>
+    <Grid Background="LightGray">
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
+        
+        <c:PageHeader Grid.Row="0" Content="{Binding Book.title}"/>
+
+        <StackPanel Grid.Row="1">
+            <TextBlock Text="{Binding Book.description}" Width="auto"/>
+            <TextBlock Text="HEllo ez oitt egy textbox"/>
+            <Button>Gomb</Button>
+        </StackPanel>
     </Grid>
 </Page>
 

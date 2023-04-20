@@ -24,9 +24,14 @@ namespace Konyvkereso.ViewModels
             TryApiCommand = new DelegateCommand(Search);
         }
 
-        public override Task OnNavigatedToAsync(object parameter, NavigationMode mode, IDictionary<string, object> state)
+        public override async Task OnNavigatedToAsync(object parameter, NavigationMode mode, IDictionary<string, object> state)
         {
-            return base.OnNavigatedToAsync(parameter, mode, state);
+            if(SearchText.Length > 0)
+            {
+                Search();
+            }
+
+            await base.OnNavigatedToAsync(parameter, mode, state);
         }
 
         private string _searchText = "";
@@ -43,21 +48,21 @@ namespace Konyvkereso.ViewModels
             set { _searchCategory = value; }
         }
 
-        public void Search()
+        public async void Search()
         {
             switch (SearchCategory)
             {
                 case SearchCategories.Title:
-                    SearchByTitle(SearchText);
+                    await SearchByTitle(SearchText);
                     break;
 
                 case SearchCategories.Author:
-                    SearchByAuthor(SearchText);
+                    await SearchByAuthor(SearchText);
                     break;
             }
         }
 
-        public async void SearchByTitle(string title)
+        public async Task SearchByTitle(string title)
         {
             Results.Clear();
             var searchResult = await bookService.getBookByTitleAsynch(title);
@@ -69,7 +74,7 @@ namespace Konyvkereso.ViewModels
             }
         }
 
-        public async void SearchByAuthor(string author)
+        public async Task SearchByAuthor(string author)
         {
             Results.Clear();
             var searchResult = await bookService.getBookByAuthorAsynch(author);
