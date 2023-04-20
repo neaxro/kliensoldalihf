@@ -1,15 +1,11 @@
 ﻿using Konyvkereso.Model;
 using Konyvkereso.Service;
-using Konyvkereso;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using Template10.Mvvm;
-using Windows.ApplicationModel.Activation;
+using Windows.UI.Xaml.Navigation;
 
 namespace Konyvkereso.ViewModel
 {
@@ -23,6 +19,11 @@ namespace Konyvkereso.ViewModel
         public MainPageViewModel()
         {
             TryApiCommand = new DelegateCommand(Search);
+        }
+
+        public override Task OnNavigatedToAsync(object parameter, NavigationMode mode, IDictionary<string, object> state)
+        {
+            return base.OnNavigatedToAsync(parameter, mode, state);
         }
 
         private string _searchText = "";

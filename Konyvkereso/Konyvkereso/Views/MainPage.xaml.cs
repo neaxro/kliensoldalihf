@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Konyvkereso.Model;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
@@ -50,8 +51,10 @@ namespace Konyvkereso
         private void BookGroups_ItemClicked(object sender, ItemClickEventArgs e)
         {
             Debug.WriteLine("Item Clicked");
-            this.Frame.Navigate(typeof(DetailPage), 0);
-            //ViewModel.NavigateToDetailsPage(0);
+            var selectedBook = (Docs)e.ClickedItem;
+            //this.Frame.Navigate(typeof(DetailPage), selectedBook);
+
+            ViewModel.NavigateToDetailsPage(0);
         }
     }
 }

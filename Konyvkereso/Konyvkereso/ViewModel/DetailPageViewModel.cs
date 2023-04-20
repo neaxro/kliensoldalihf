@@ -20,12 +20,5 @@ namespace Konyvkereso.ViewModel
             get { return _book; }
             set { _book = value; }
         }
-        public override Task OnNavigatedToAsync(object parameter, NavigationMode mode, IDictionary<string, object> state)
-        {
-            int bookId = (int)parameter;
-            
-
-            return base.OnNavigatedToAsync(parameter, mode, state);
-        }
     }
 }

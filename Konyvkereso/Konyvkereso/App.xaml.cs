@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Threading.Tasks;
+using Template10.Services.NavigationService;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.Foundation;
@@ -14,13 +16,15 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using Template10.Common.BootStrapper;
 
 namespace Konyvkereso
 {
     /// <summary>
     /// Provides application-specific behavior to supplement the default Application class.
     /// </summary>
-    sealed partial class App : Application
+    [Bindable]
+    sealed partial class App : Template10.Common.BootStrapper
     {
         /// <summary>
         /// Initializes the singleton application object.  This is the first line of authored code
@@ -29,9 +33,14 @@ namespace Konyvkereso
         public App()
         {
             this.InitializeComponent();
-            this.Suspending += OnSuspending;
+            //this.Suspending += OnSuspending;
         }
 
+        public override async Task OnStartAsync(StartKind startKind, IActivatedEventArgs args)
+        {
+            await NavigationService.NavigateAsync(typeof(MainPage));
+        }
+        /*
         /// <summary>
         /// Invoked when the application is launched normally by the end user.  Other entry points
         /// will be used such as when the application is launched to open a specific file.
@@ -95,6 +104,6 @@ namespace Konyvkereso
             var deferral = e.SuspendingOperation.GetDeferral();
             //TODO: Save application state and stop any background activity
             deferral.Complete();
-        }
+        }*/
     }
 }
