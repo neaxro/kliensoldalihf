@@ -8,7 +8,6 @@ C:\GIT\Kliensoldali\kliensoldalihf\Konyvkereso\Konyvkereso\bin\x86\Debug\Core\Ap
 C:\GIT\Kliensoldali\kliensoldalihf\Konyvkereso\Konyvkereso\bin\x86\Debug\Core\Konyvkereso.exe
 C:\GIT\Kliensoldali\kliensoldalihf\Konyvkereso\Konyvkereso\bin\x86\Debug\Konyvkereso.build.appxrecipe
 C:\GIT\Kliensoldali\kliensoldalihf\Konyvkereso\Konyvkereso\bin\x86\Debug\System.Runtime.dll
-C:\GIT\Kliensoldali\kliensoldalihf\Konyvkereso\Konyvkereso\bin\x86\Debug\Microsoft.UI.Xaml.Markup.winmd
 C:\GIT\Kliensoldali\kliensoldalihf\Konyvkereso\Konyvkereso\obj\x86\Debug\Konyvkereso.csproj.AssemblyReference.cache
 C:\GIT\Kliensoldali\kliensoldalihf\Konyvkereso\Konyvkereso\obj\x86\Debug\App.g.i.cs
 C:\GIT\Kliensoldali\kliensoldalihf\Konyvkereso\Konyvkereso\obj\x86\Debug\App.g.cs
@@ -54,3 +53,10 @@ C:\GIT\Kliensoldali\kliensoldalihf\Konyvkereso\Konyvkereso\obj\x86\Debug\Views\M
 C:\GIT\Kliensoldali\kliensoldalihf\Konyvkereso\Konyvkereso\obj\x86\Debug\Views\MainPage.xaml
 C:\GIT\Kliensoldali\kliensoldalihf\Konyvkereso\Konyvkereso\obj\x86\Debug\Views\MainPage.xbf
 C:\GIT\Kliensoldali\kliensoldalihf\Konyvkereso\Konyvkereso\bin\x86\Debug\Views\MainPage.xbf
+C:\GIT\Kliensoldali\kliensoldalihf\Konyvkereso\Konyvkereso\bin\x86\Debug\Views\DetailPage.xbf
+C:\GIT\Kliensoldali\kliensoldalihf\Konyvkereso\Konyvkereso\obj\x86\Debug\Views\DetailPage.g.i.cs
+C:\GIT\Kliensoldali\kliensoldalihf\Konyvkereso\Konyvkereso\obj\x86\Debug\Views\DetailPage.g.cs
+C:\GIT\Kliensoldali\kliensoldalihf\Konyvkereso\Konyvkereso\obj\x86\Debug\Views\DetailPage.xaml
+C:\GIT\Kliensoldali\kliensoldalihf\Konyvkereso\Konyvkereso\obj\x86\Debug\Views\DetailPage.xbf
+C:\GIT\Kliensoldali\kliensoldalihf\Konyvkereso\Konyvkereso\bin\x86\Debug\Microsoft.UI.Xaml.Markup.winmd
+C:\GIT\Kliensoldali\kliensoldalihf\Konyvkereso\Konyvkereso\obj\x86\Debug\.winmd_cache\$Microsoft.UI.Xaml.Markup.winmd_637934950560000000.json

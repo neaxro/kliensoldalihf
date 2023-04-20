@@ -50,6 +50,8 @@ namespace Konyvkereso
         private void BookGroups_ItemClicked(object sender, ItemClickEventArgs e)
         {
             Debug.WriteLine("Item Clicked");
+            this.Frame.Navigate(typeof(DetailPage), 0);
+            //ViewModel.NavigateToDetailsPage(0);
         }
     }
 }

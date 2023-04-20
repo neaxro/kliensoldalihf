@@ -1,5 +1,6 @@
 ﻿using Konyvkereso.Model;
 using Konyvkereso.Service;
+using Konyvkereso;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -75,6 +76,11 @@ namespace Konyvkereso.ViewModel
                 Results.Add(item);
 
             }
+        }
+
+        public void NavigateToDetailsPage(int bookId)
+        {
+            NavigationService.Navigate(typeof(DetailPage), bookId);
         }
     }
 }
