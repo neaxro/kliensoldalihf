@@ -3,6 +3,7 @@ using Konyvkereso.Service;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -58,6 +59,7 @@ namespace Konyvkereso.ViewModel
 
             foreach(var item in searchResult.Docs)
             {
+                item.CoverUrl = String.Format("https://covers.openlibrary.org/b/id/{0}-M.jpg", item.Cover_i);
                 Results.Add(item);
             }
         }
@@ -69,7 +71,9 @@ namespace Konyvkereso.ViewModel
 
             foreach (var item in searchResult.Docs)
             {
+                item.CoverUrl = String.Format("https://covers.openlibrary.org/b/id/{0}-M.jpg", item.Cover_i);
                 Results.Add(item);
+
             }
         }
     }

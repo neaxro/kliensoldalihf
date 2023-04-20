@@ -35,7 +35,7 @@
             HorizontalAlignment="Center"
             Padding="15">
 
-            <ComboBox x:ConnectionId='3'
+            <ComboBox x:ConnectionId='5'
                 x:Name="SearchCategory"
                 PlaceholderText="Pick search category"
                 MinWidth="200"
@@ -46,21 +46,63 @@
                 <x:String>Title</x:String>
                 <x:String>Author</x:String>
             </ComboBox>
-            
-            <TextBox x:ConnectionId='4'
+
+            <TextBox x:ConnectionId='6'
                 x:Name="SearchText"
                 PlaceholderText="Search..."
                 MinWidth="300"
                 MaxWidth="600"
                 Text="{Binding SearchText, Mode=TwoWay}"
                 />
-            
+
             <Button Command="{ Binding TryApiCommand }">Search</Button>
-            
+
         </StackPanel>
 
+        <!-- ADATOK LISTAZASA MASODIK SORBA -->
+        <GridView x:ConnectionId='3' 
+           Grid.Row="1"
+            ItemsSource="{Binding Results}"
+            IsItemClickEnabled="True"
+                                              
+            >
 
-        <StackPanel Grid.Row="1" Background="LightGray"></StackPanel>
+            <GridView.ItemTemplate>
+                <DataTemplate>
+                    
+                    <Grid
+                        Height="200"
+                        Width="200">
+                        
+                        <Image
+                            Stretch="UniformToFill"
+                            VerticalAlignment="Center"
+                            Source="{Binding CoverUrl}"/>
+                        
+                        <Border
+                            Background="Black"
+                            VerticalAlignment="Bottom">
+                            <StackPanel
+                                Padding="5">
+                                <TextBlock
+                                    Text="{Binding Title}"
+                                    Foreground="White"
+                                    FontSize="20"
+                                    TextTrimming="WordEllipsis"/>
+                                
+                                <TextBlock
+                                    Text="{Binding Author_name[0]}"
+                                    Foreground="LightGray"
+                                    FontSize="15"/>
+                            </StackPanel>
+                        </Border>
+                    
+                    </Grid>
+                    
+                </DataTemplate>
+            </GridView.ItemTemplate>
+
+        </GridView>
     </Grid>
 </Page>
 

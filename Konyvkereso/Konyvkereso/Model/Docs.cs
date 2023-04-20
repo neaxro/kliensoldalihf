@@ -18,6 +18,8 @@ namespace Konyvkereso.Model
         public string[] Ia { get; set; }
         public string[] Author_key { get; set; }
         public bool Public_scan_b { get; set; }
+
+        public string CoverUrl{ get; set; }
     }
 
 }

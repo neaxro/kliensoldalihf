@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -44,6 +45,11 @@ namespace Konyvkereso
                     ViewModel.SearchCategory = Konyvkereso.ViewModel.MainPageViewModel.SearchCategories.Title;
                     break;
             }
+        }
+
+        private void BookGroups_ItemClicked(object sender, ItemClickEventArgs e)
+        {
+            Debug.WriteLine("Item Clicked");
         }
     }
 }
