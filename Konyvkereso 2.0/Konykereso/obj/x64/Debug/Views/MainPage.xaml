@@ -1,0 +1,108 @@
+﻿<Page
+    x:Class="Konyvkereso.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Konyvkereso"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vm="using:Konyvkereso.ViewModels"
+    xmlns:c="using:Template10.Controls"
+    xmlns:controls="using:Template10.Controls"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Page.DataContext>
+        <vm:MainPageViewModel x:ConnectionId='2' x:Name="ViewModel"/>
+    </Page.DataContext>
+
+    <Page.Resources>
+        <CollectionViewSource
+            x:Key="BookViewModel"
+            Source="{Binding Results}"
+            ItemsPath="Books"
+            />
+    </Page.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel
+            Grid.Row="0"
+            Orientation="Horizontal"
+            HorizontalAlignment="Center"
+            Padding="15">
+
+            <ComboBox x:ConnectionId='5'
+                x:Name="SearchCategory"
+                PlaceholderText="Pick search category"
+                MinWidth="200"
+                MaxWidth="400"
+                                                                          
+                SelectedIndex="0"
+                >
+                <x:String>Title</x:String>
+                <x:String>Author</x:String>
+            </ComboBox>
+
+            <TextBox x:ConnectionId='6'
+                x:Name="SearchText"
+                PlaceholderText="Search..."
+                MinWidth="300"
+                MaxWidth="600"
+                Text="{Binding SearchText, Mode=TwoWay}"
+                />
+
+            <Button Command="{ Binding TryApiCommand }">Search</Button>
+
+        </StackPanel>
+
+        <!-- ADATOK LISTAZASA MASODIK SORBA -->
+        <GridView x:ConnectionId='3' 
+           Grid.Row="1"
+            ItemsSource="{Binding Results}"
+            IsItemClickEnabled="True"
+                                              
+            >
+
+            <GridView.ItemTemplate>
+                <DataTemplate>
+
+                    <Grid
+                        Height="200"
+                        Width="200">
+
+                        <Image
+                            Stretch="UniformToFill"
+                            VerticalAlignment="Center"
+                            Source="{Binding CoverUrl}"/>
+
+                        <Border
+                            Background="Black"
+                            VerticalAlignment="Bottom">
+                            <StackPanel
+                                Padding="5">
+                                <TextBlock
+                                    Text="{Binding Title}"
+                                    Foreground="White"
+                                    FontSize="20"
+                                    TextTrimming="WordEllipsis"/>
+
+                                <TextBlock
+                                    Text="{Binding Author_name[0]}"
+                                    Foreground="LightGray"
+                                    FontSize="15"/>
+                            </StackPanel>
+                        </Border>
+
+                    </Grid>
+
+                </DataTemplate>
+            </GridView.ItemTemplate>
+
+        </GridView>
+    </Grid>
+</Page>
+
