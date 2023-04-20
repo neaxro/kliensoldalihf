@@ -1,1 +1,1 @@
-C:\Users\Work\Desktop\Konyvkereso - Copy\Konykereso\Konykereso.csproj;x64
+C:\GIT\Kliensoldali\kliensoldalihf\Konyvkereso 2.0\Konykereso\Konykereso.csproj;x64

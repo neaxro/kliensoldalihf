@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Template10.Mvvm;
+using Windows.UI.Xaml.Navigation;
 
 namespace Konyvkereso.ViewModels
 {
@@ -18,6 +19,13 @@ namespace Konyvkereso.ViewModels
         {
             get { return _book; }
             set { _book = value; }
+        }
+
+        public override Task OnNavigatedToAsync(object parameter, NavigationMode mode, IDictionary<string, object> state)
+        {
+            string bookPath = (string)parameter;
+
+            return base.OnNavigatedToAsync(parameter, mode, state);
         }
     }
 }

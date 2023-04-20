@@ -23985,11 +23985,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Work\\Desktop\\Konyvkereso - Copy\\Konykereso\\Konykereso.csproj",
+      "projectUniqueName": "C:\\GIT\\Kliensoldali\\kliensoldalihf\\Konyvkereso 2.0\\Konykereso\\Konykereso.csproj",
       "projectName": "Konyvkereso",
-      "projectPath": "C:\\Users\\Work\\Desktop\\Konyvkereso - Copy\\Konykereso\\Konykereso.csproj",
+      "projectPath": "C:\\GIT\\Kliensoldali\\kliensoldalihf\\Konyvkereso 2.0\\Konykereso\\Konykereso.csproj",
       "packagesPath": "C:\\Users\\Work\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Work\\Desktop\\Konyvkereso - Copy\\Konykereso\\obj\\",
+      "outputPath": "C:\\GIT\\Kliensoldali\\kliensoldalihf\\Konyvkereso 2.0\\Konykereso\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [

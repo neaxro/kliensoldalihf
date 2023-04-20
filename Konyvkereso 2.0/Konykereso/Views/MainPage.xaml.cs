@@ -52,9 +52,8 @@ namespace Konyvkereso
         {
             Debug.WriteLine("Item Clicked");
             var selectedBook = (Docs)e.ClickedItem;
-            //this.Frame.Navigate(typeof(DetailPage), selectedBook);
 
-            ViewModel.NavigateToDetailsPage(0);
+            ViewModel.NavigateToDetailsPage(selectedBook.Key);
         }
     }
 }

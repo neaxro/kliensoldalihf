@@ -10,7 +10,7 @@
     <PackageArchitecture>x64</PackageArchitecture>
     <PackageIdentityName>af718755-736a-491e-9576-94b0e2c0883e</PackageIdentityName>
     <PackageIdentityPublisher>CN=Tibi</PackageIdentityPublisher>
-    <IntermediateOutputPath>C:\Users\Work\Desktop\Konyvkereso - Copy\Konykereso\obj\x64\Debug\</IntermediateOutputPath>
+    <IntermediateOutputPath>C:\GIT\Kliensoldali\kliensoldalihf\Konyvkereso 2.0\Konykereso\obj\x64\Debug\</IntermediateOutputPath>
     <RemoteDeploymentType>
     </RemoteDeploymentType>
     <PackageRegistrationPath>
@@ -18,7 +18,7 @@
     <RemoveNonLayoutFiles>true</RemoveNonLayoutFiles>
     <DeployOptionalPackages>false</DeployOptionalPackages>
     <WindowsSdkPath>C:\Program Files %28x86%29\Windows Kits\10\</WindowsSdkPath>
-    <LayoutDir>C:\Users\Work\Desktop\Konyvkereso - Copy\Konykereso\bin\x64\Debug\AppX</LayoutDir>
+    <LayoutDir>C:\GIT\Kliensoldali\kliensoldalihf\Konyvkereso 2.0\Konykereso\bin\x64\Debug\AppX</LayoutDir>
     <RegisteredManifestChecksum>895D1F07F3763C8975017631E1757E2FB7ED10F2E564984F4C837EB380B016CC</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>af718755-736a-491e-9576-94b0e2c0883e_1.0.0.0_x64__zwjg00b7eajd6</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>af718755-736a-491e-9576-94b0e2c0883e_zwjg00b7eajd6!App</RegisteredUserModeAppID>
@@ -27,16 +27,16 @@
     <RegisteredVersion>1.0.0.0</RegisteredVersion>
   </PropertyGroup>
   <ItemGroup>
-    <AppXManifest Include="C:\Users\Work\Desktop\Konyvkereso - Copy\Konykereso\bin\x64\Debug\Core\AppxManifest.xml">
+    <AppXManifest Include="C:\GIT\Kliensoldali\kliensoldalihf\Konyvkereso 2.0\Konykereso\bin\x64\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2023-04-20T19:26:09.106</Modified>
+      <Modified>2023-04-20T19:40:02.623</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
-    <AppxPackagedFile Include="C:\Users\Work\Desktop\Konyvkereso - Copy\Konykereso\bin\x64\Debug\Konyvkereso.exe">
+    <AppxPackagedFile Include="C:\GIT\Kliensoldali\kliensoldalihf\Konyvkereso 2.0\Konykereso\bin\x64\Debug\Konyvkereso.exe">
       <PackagePath>entrypoint\Konyvkereso.exe</PackagePath>
-      <Modified>2023-04-20T19:26:08.594</Modified>
+      <Modified>2023-04-20T19:40:02.416</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\UWPNuGetPackages\microsoft.csharp\4.0.1\lib\netcore50\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -522,79 +522,79 @@
       <PackagePath>Template10Library\Properties\Template10Library.rd.xml</PackagePath>
       <Modified>2016-10-17T11:42:00.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Work\Desktop\Konyvkereso - Copy\Konykereso\Help.htm">
+    <AppxPackagedFile Include="C:\GIT\Kliensoldali\kliensoldalihf\Konyvkereso 2.0\Konykereso\Help.htm">
       <PackagePath>Help.htm</PackagePath>
       <Modified>2017-03-10T14:13:36.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Work\Desktop\Konyvkereso - Copy\Konykereso\Properties\Default.rd.xml">
+    <AppxPackagedFile Include="C:\GIT\Kliensoldali\kliensoldalihf\Konyvkereso 2.0\Konykereso\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
       <Modified>2017-03-10T14:13:36.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Work\Desktop\Konyvkereso - Copy\Konykereso\Assets\LockScreenLogo.scale-200.png">
+    <AppxPackagedFile Include="C:\GIT\Kliensoldali\kliensoldalihf\Konyvkereso 2.0\Konykereso\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
       <Modified>2017-03-10T14:13:34.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Work\Desktop\Konyvkereso - Copy\Konykereso\Assets\SplashScreen.scale-200.png">
+    <AppxPackagedFile Include="C:\GIT\Kliensoldali\kliensoldalihf\Konyvkereso 2.0\Konykereso\Assets\SplashScreen.scale-200.png">
       <PackagePath>Assets\SplashScreen.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2017-03-10T14:13:34.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Work\Desktop\Konyvkereso - Copy\Konykereso\Assets\Square150x150Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\GIT\Kliensoldali\kliensoldalihf\Konyvkereso 2.0\Konykereso\Assets\Square150x150Logo.scale-200.png">
       <PackagePath>Assets\Square150x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2017-03-10T14:13:34.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Work\Desktop\Konyvkereso - Copy\Konykereso\Assets\Square44x44Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\GIT\Kliensoldali\kliensoldalihf\Konyvkereso 2.0\Konykereso\Assets\Square44x44Logo.scale-200.png">
       <PackagePath>Assets\Square44x44Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2017-03-10T14:13:34.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Work\Desktop\Konyvkereso - Copy\Konykereso\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
+    <AppxPackagedFile Include="C:\GIT\Kliensoldali\kliensoldalihf\Konyvkereso 2.0\Konykereso\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-24_altform-unplated.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2017-03-10T14:13:36.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Work\Desktop\Konyvkereso - Copy\Konykereso\Assets\StoreLogo.png">
+    <AppxPackagedFile Include="C:\GIT\Kliensoldali\kliensoldalihf\Konyvkereso 2.0\Konykereso\Assets\StoreLogo.png">
       <PackagePath>Assets\StoreLogo.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2017-03-10T14:13:36.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Work\Desktop\Konyvkereso - Copy\Konykereso\Assets\Wide310x150Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\GIT\Kliensoldali\kliensoldalihf\Konyvkereso 2.0\Konykereso\Assets\Wide310x150Logo.scale-200.png">
       <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2017-03-10T14:13:36.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Work\Desktop\Konyvkereso - Copy\Konykereso\bin\x64\Debug\Konyvkereso.xr.xml">
+    <AppxPackagedFile Include="C:\GIT\Kliensoldali\kliensoldalihf\Konyvkereso 2.0\Konykereso\bin\x64\Debug\Konyvkereso.xr.xml">
       <PackagePath>Konyvkereso.xr.xml</PackagePath>
       <Modified>2023-04-20T19:22:40.065</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Work\Desktop\Konyvkereso - Copy\Konykereso\bin\x64\Debug\App.xbf">
+    <AppxPackagedFile Include="C:\GIT\Kliensoldali\kliensoldalihf\Konyvkereso 2.0\Konykereso\bin\x64\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2023-04-20T19:26:08.557</Modified>
+      <Modified>2023-04-20T19:40:02.383</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Work\Desktop\Konyvkereso - Copy\Konykereso\bin\x64\Debug\Styles\Custom.xbf">
+    <AppxPackagedFile Include="C:\GIT\Kliensoldali\kliensoldalihf\Konyvkereso 2.0\Konykereso\bin\x64\Debug\Styles\Custom.xbf">
       <PackagePath>Styles\Custom.xbf</PackagePath>
-      <Modified>2023-04-20T19:26:08.557</Modified>
+      <Modified>2023-04-20T19:40:02.382</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Work\Desktop\Konyvkereso - Copy\Konykereso\bin\x64\Debug\Views\DetailPage.xbf">
+    <AppxPackagedFile Include="C:\GIT\Kliensoldali\kliensoldalihf\Konyvkereso 2.0\Konykereso\bin\x64\Debug\Views\DetailPage.xbf">
       <PackagePath>Views\DetailPage.xbf</PackagePath>
-      <Modified>2023-04-20T19:26:08.557</Modified>
+      <Modified>2023-04-20T19:40:02.383</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Work\Desktop\Konyvkereso - Copy\Konykereso\bin\x64\Debug\Views\MainPage.xbf">
+    <AppxPackagedFile Include="C:\GIT\Kliensoldali\kliensoldalihf\Konyvkereso 2.0\Konykereso\bin\x64\Debug\Views\MainPage.xbf">
       <PackagePath>Views\MainPage.xbf</PackagePath>
-      <Modified>2023-04-20T19:26:08.557</Modified>
+      <Modified>2023-04-20T19:40:02.383</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.22000.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
       <Modified>2022-07-15T19:53:28.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Work\Desktop\Konyvkereso - Copy\Konykereso\bin\x64\Debug\resources.pri">
+    <AppxPackagedFile Include="C:\GIT\Kliensoldali\kliensoldalihf\Konyvkereso 2.0\Konykereso\bin\x64\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2023-04-20T19:22:41.012</Modified>
+      <Modified>2023-04-20T19:30:03.789</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Work\Desktop\Konyvkereso - Copy\Konykereso\bin\x64\Debug\Core\Konyvkereso.exe">
+    <AppxPackagedFile Include="C:\GIT\Kliensoldali\kliensoldalihf\Konyvkereso 2.0\Konykereso\bin\x64\Debug\Core\Konyvkereso.exe">
       <PackagePath>Konyvkereso.exe</PackagePath>
-      <Modified>2023-04-20T19:26:09.101</Modified>
+      <Modified>2023-04-20T19:40:02.622</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

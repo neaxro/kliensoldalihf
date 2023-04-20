@@ -82,9 +82,9 @@ namespace Konyvkereso.ViewModels
             }
         }
 
-        public void NavigateToDetailsPage(int bookId)
+        public void NavigateToDetailsPage(string bookPath)
         {
-            NavigationService.Navigate(typeof(Views.DetailPage), bookId);
+            NavigationService.Navigate(typeof(Views.DetailPage), bookPath);
         }
     }
 }

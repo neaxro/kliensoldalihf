@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "lRzN+nSDh6trxR4d0m4KN51EOEH4esrNGHaL4eLzekz3e39y1AGjVP8wDEkXNTmqh1l5FM6OVTgW7KNRZ+0cBw==",
+  "dgSpecHash": "wys4Keu513rf15tq+sHKTKJeNvU8aB2nBMIdRXV7x6zF1qYw2VhuW8u8TJAzy5ZpgqeCTIqSqhnLhmg4u8SlPQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Work\\Desktop\\Konyvkereso - Copy\\Konykereso\\Konykereso.csproj",
+  "projectFilePath": "C:\\GIT\\Kliensoldali\\kliensoldalihf\\Konyvkereso 2.0\\Konykereso\\Konykereso.csproj",
   "expectedPackageFiles": [
     "C:\\Program Files (x86)\\Microsoft SDKs\\UWPNuGetPackages\\microsoft.csharp\\4.0.1\\microsoft.csharp.4.0.1.nupkg.sha512",
     "C:\\Program Files (x86)\\Microsoft SDKs\\UWPNuGetPackages\\microsoft.netcore\\5.0.2\\microsoft.netcore.5.0.2.nupkg.sha512",
