@@ -30,13 +30,13 @@
     <AppXManifest Include="C:\GIT\Kliensoldali\kliensoldalihf\Konyvkereso\Konyvkereso\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2023-04-19T20:49:49.000</Modified>
+      <Modified>2023-04-19T21:26:30.755</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\GIT\Kliensoldali\kliensoldalihf\Konyvkereso\Konyvkereso\bin\x86\Debug\Konyvkereso.exe">
       <PackagePath>entrypoint\Konyvkereso.exe</PackagePath>
-      <Modified>2023-04-19T20:49:48.593</Modified>
+      <Modified>2023-04-19T21:26:30.103</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Work\.nuget\packages\microsoft.xaml.behaviors.uwp.managed\2.0.1\lib\uap10.0\Microsoft.Xaml.Interactions.dll">
       <PackagePath>Microsoft.Xaml.Interactions.dll</PackagePath>
@@ -114,11 +114,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\GIT\Kliensoldali\kliensoldalihf\Konyvkereso\Konyvkereso\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2023-04-19T20:49:48.553</Modified>
+      <Modified>2023-04-19T21:26:30.056</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\GIT\Kliensoldali\kliensoldalihf\Konyvkereso\Konyvkereso\bin\x86\Debug\Views\MainPage.xbf">
       <PackagePath>Views\MainPage.xbf</PackagePath>
-      <Modified>2023-04-19T20:49:48.553</Modified>
+      <Modified>2023-04-19T21:26:30.056</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.22621.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -130,7 +130,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\GIT\Kliensoldali\kliensoldalihf\Konyvkereso\Konyvkereso\bin\x86\Debug\Core\Konyvkereso.exe">
       <PackagePath>Konyvkereso.exe</PackagePath>
-      <Modified>2023-04-19T20:49:48.999</Modified>
+      <Modified>2023-04-19T21:26:30.747</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
