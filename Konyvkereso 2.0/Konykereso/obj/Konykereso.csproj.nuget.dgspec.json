@@ -10,7 +10,7 @@
         "projectUniqueName": "C:\\GIT\\Kliensoldali\\kliensoldalihf\\Konyvkereso 2.0\\Konykereso\\Konykereso.csproj",
         "projectName": "Konyvkereso",
         "projectPath": "C:\\GIT\\Kliensoldali\\kliensoldalihf\\Konyvkereso 2.0\\Konykereso\\Konykereso.csproj",
-        "packagesPath": "C:\\Users\\Work\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\neaxr\\.nuget\\packages\\",
         "outputPath": "C:\\GIT\\Kliensoldali\\kliensoldalihf\\Konyvkereso 2.0\\Konykereso\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
@@ -19,7 +19,7 @@
           "C:\\Program Files (x86)\\Microsoft SDKs\\UWPNuGetPackages\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\Work\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\neaxr\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],

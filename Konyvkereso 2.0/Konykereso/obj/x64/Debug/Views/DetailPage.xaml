@@ -19,14 +19,54 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        
-        <c:PageHeader Grid.Row="0" Content="{Binding Book.title}"/>
 
-        <StackPanel Grid.Row="1">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        
+        <c:PageHeader Grid.Row="0" Grid.ColumnSpan="2" Content="{Binding Book.title}"/>
+
+        <Image
+            Grid.Column="0"
+            Grid.Row="1"
+            Width="300"
+            Stretch="Uniform"
+            Source="ms-appx:///Assets/Square150x150Logo.scale-200.png"/>
+
+        <StackPanel
+            Grid.Row="1"
+            Grid.Column="1"
+            Grid.RowSpan="2">
+
+            <ScrollViewer
+                HorizontalScrollMode="Enabled"
+                HorizontalScrollBarVisibility="Visible"
+                VerticalScrollMode="Disabled"
+                VerticalScrollBarVisibility="Hidden">
+                
+                <ListView
+                    ItemsSource="{Binding Book.links}"
+                    Padding="10">
+                
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <HyperlinkButton Content="{Binding title}" NavigateUri="{Binding url}"/>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+
+                    <ListView.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <StackPanel Orientation="Horizontal"></StackPanel>
+                        </ItemsPanelTemplate>
+                    </ListView.ItemsPanel>
+                </ListView>
+            </ScrollViewer>
+            
             <TextBlock Text="{Binding Book.description}" Width="auto"/>
-            <TextBlock Text="HEllo ez oitt egy textbox"/>
-            <Button>Gomb</Button>
+            
         </StackPanel>
     </Grid>
 </Page>
