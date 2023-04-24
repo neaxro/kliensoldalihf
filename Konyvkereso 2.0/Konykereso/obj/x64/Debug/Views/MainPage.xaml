@@ -9,7 +9,8 @@
     xmlns:c="using:Template10.Controls"
     xmlns:controls="using:Template10.Controls"
     mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    NavigationCacheMode="Required">
 
     <Page.DataContext>
         <vm:MainPageViewModel x:ConnectionId='2' x:Name="ViewModel"/>
@@ -64,7 +65,8 @@
            Grid.Row="1"
             ItemsSource="{Binding Source={StaticResource SearchResults}}"
             IsItemClickEnabled="True"
-                                              >
+                                              
+            CacheMode="BitmapCache">
 
             <GridView.ItemTemplate>
                 <DataTemplate>

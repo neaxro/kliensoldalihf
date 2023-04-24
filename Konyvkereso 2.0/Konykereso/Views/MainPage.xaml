@@ -9,7 +9,8 @@
     xmlns:c="using:Template10.Controls"
     xmlns:controls="using:Template10.Controls"
     mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    NavigationCacheMode="Required">
 
     <Page.DataContext>
         <vm:MainPageViewModel x:Name="ViewModel"/>
@@ -64,7 +65,8 @@
            Grid.Row="1"
             ItemsSource="{Binding Source={StaticResource SearchResults}}"
             IsItemClickEnabled="True"
-            ItemClick="BookGroups_ItemClicked">
+            ItemClick="BookGroups_ItemClicked"
+            CacheMode="BitmapCache">
 
             <GridView.ItemTemplate>
                 <DataTemplate>
