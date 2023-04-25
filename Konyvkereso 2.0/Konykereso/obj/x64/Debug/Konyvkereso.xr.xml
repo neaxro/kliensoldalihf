@@ -2,10 +2,11 @@
 <Roots >
   <Roots.PropertyPathNames>
     <RootPropertyPathName Name="Book" />
-    <RootPropertyPathName Name="description" />
     <RootPropertyPathName Name="links" />
     <RootPropertyPathName Name="title" />
     <RootPropertyPathName Name="url" />
+    <RootPropertyPathName Name="subjects" />
+    <RootPropertyPathName Name="description" />
     <RootPropertyPathName Name="coverUrl" />
     <RootPropertyPathName Name="Books" />
     <RootPropertyPathName Name="Results" />
@@ -63,35 +64,44 @@
       <RootProperty Name="Source" />
       <RootProperty Name="VerticalAlignment" />
     </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.ScrollViewer">
+      <RootProperty Name="VerticalScrollMode" />
+      <RootProperty Name="Content" />
+      <RootProperty Name="HorizontalScrollMode" />
+      <RootProperty Name="HorizontalScrollBarVisibility" />
+      <RootProperty Name="VerticalScrollBarVisibility" />
+    </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.StackPanel">
       <RootProperty Name="Children" />
       <RootProperty Name="Orientation" />
       <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="Padding" />
     </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.ScrollViewer">
-      <RootProperty Name="HorizontalScrollMode" />
-      <RootProperty Name="HorizontalScrollBarVisibility" />
-      <RootProperty Name="VerticalScrollMode" />
-      <RootProperty Name="VerticalScrollBarVisibility" />
-      <RootProperty Name="Content" />
-    </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.TextBlock">
       <RootProperty Name="Text" />
-      <RootProperty Name="Width" />
-      <RootProperty Name="Foreground" />
       <RootProperty Name="FontSize" />
+      <RootProperty Name="FontWeight" />
+      <RootProperty Name="Width" />
       <RootProperty Name="TextTrimming" />
+      <RootProperty Name="Foreground" />
     </RootType>
-    <RootType FullName="Windows.UI.Xaml.Data.Binding">
-      <RootProperty Name="Source" />
-      <RootProperty Name="Mode" />
+    <RootType FullName="Windows.UI.Xaml.Controls.GridView">
+      <RootProperty Name="ItemsSource" />
+      <RootProperty Name="IsItemClickEnabled" />
+      <RootProperty Name="Padding" />
+      <RootProperty Name="ItemTemplate" />
+      <RootProperty Name="CacheMode" />
+      <RootEvent Name="ItemClick" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.ListView">
       <RootProperty Name="ItemsSource" />
       <RootProperty Name="Padding" />
       <RootProperty Name="ItemTemplate" />
       <RootProperty Name="ItemsPanel" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Data.Binding">
+      <RootProperty Name="Source" />
+      <RootProperty Name="Mode" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.DataTemplate">
       <RootProperty Name="Template" />
@@ -108,13 +118,6 @@
     <RootType FullName="Windows.UI.Xaml.Data.CollectionViewSource">
       <RootProperty Name="Source" />
       <RootProperty Name="ItemsPath" />
-    </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.GridView">
-      <RootProperty Name="ItemsSource" />
-      <RootProperty Name="IsItemClickEnabled" />
-      <RootProperty Name="CacheMode" />
-      <RootProperty Name="ItemTemplate" />
-      <RootEvent Name="ItemClick" />
     </RootType>
     <RootType FullName="Microsoft.Xaml.DirectUI.ProxyTypes.StaticResourceExtension" />
     <RootType FullName="Windows.UI.Xaml.Controls.Border">

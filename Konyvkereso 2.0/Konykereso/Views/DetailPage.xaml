@@ -26,7 +26,7 @@
             <ColumnDefinition Width="auto"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        
+
         <c:PageHeader Grid.Row="0" Grid.ColumnSpan="2" Content="{Binding Book.title}"/>
 
         <!-- ms-appx:///Assets/Square150x150Logo.scale-200.png -->
@@ -37,37 +37,69 @@
             Stretch="Uniform"
             Source="{Binding Book.coverUrl}"/>
 
-        <StackPanel
+        <Grid
             Grid.Row="1"
             Grid.Column="1"
             Grid.RowSpan="2">
 
+            
             <ScrollViewer
-                HorizontalScrollMode="Enabled"
-                HorizontalScrollBarVisibility="Visible"
-                VerticalScrollMode="Disabled"
-                VerticalScrollBarVisibility="Hidden">
-                
-                <ListView
-                    ItemsSource="{Binding Book.links}"
-                    Padding="10">
-                
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <HyperlinkButton Content="{Binding title}" NavigateUri="{Binding url}"/>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
+                VerticalScrollMode="Enabled">
 
-                    <ListView.ItemsPanel>
-                        <ItemsPanelTemplate>
-                            <StackPanel Orientation="Horizontal"></StackPanel>
-                        </ItemsPanelTemplate>
-                    </ListView.ItemsPanel>
-                </ListView>
+                <StackPanel>
+
+                    <!-- Description section -->
+                    <TextBlock Text="Description" FontSize="30" FontWeight="Bold"/>
+                    <TextBlock
+                        Text="{Binding Book.description}"
+                        Width="auto"/>
+
+                    <!-- Subjects -->
+                    <TextBlock Text="Subjects" FontSize="30" FontWeight="Bold"/>
+                    <GridView
+                            ItemsSource="{Binding Book.subjects}"
+                            IsItemClickEnabled="False"
+                            Padding="10">
+
+                        <GridView.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel>
+                                    <TextBlock Text="{Binding}" TextTrimming="WordEllipsis" Width="200"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </GridView.ItemTemplate>
+
+                    </GridView>
+
+                    <!-- Links -->
+                    <TextBlock Text="Links to this book" FontSize="30" FontWeight="Bold"/>
+                    <ScrollViewer
+                        HorizontalScrollMode="Enabled"
+                        HorizontalScrollBarVisibility="Visible"
+                        VerticalScrollMode="Disabled"
+                        VerticalScrollBarVisibility="Hidden">
+                        
+                        <ListView
+                            ItemsSource="{Binding Book.links}"
+                            Padding="10">
+
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <HyperlinkButton Content="{Binding title}" NavigateUri="{Binding url}"/>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+
+                            <ListView.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <StackPanel Orientation="Horizontal"></StackPanel>
+                                </ItemsPanelTemplate>
+                            </ListView.ItemsPanel>
+
+                        </ListView>
+                    </ScrollViewer>
+                    
+                </StackPanel>
             </ScrollViewer>
-            
-            <TextBlock Text="{Binding Book.description}" Width="auto"/>
-            
-        </StackPanel>
+        </Grid>
     </Grid>
 </Page>
