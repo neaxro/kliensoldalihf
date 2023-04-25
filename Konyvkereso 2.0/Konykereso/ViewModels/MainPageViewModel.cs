@@ -32,6 +32,9 @@ namespace Konyvkereso.ViewModels
         private int pageCount = 0;
         private int currentPage = 0;
         private string _pageText = "0/0";
+
+        // The Paging information
+        public event PropertyChangedEventHandler PropertyChanged;
         public string PageText
         {
             get { return _pageText; }
@@ -41,11 +44,9 @@ namespace Konyvkereso.ViewModels
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(PageText)));
             }
         }
-        public event PropertyChangedEventHandler PropertyChanged;
-
+        
         // Search text
         private string _searchText = "Harry Potter";
-        private string lastSearchText = "";
         public string SearchText
         {
             get { return _searchText; }
@@ -68,6 +69,9 @@ namespace Konyvkereso.ViewModels
             set { _sortCategory = value; }
         }
 
+        /// <summary>
+        /// Starts a search
+        /// </summary>
         private async void Search()
         {
             if(currentPage == 0)
@@ -87,6 +91,13 @@ namespace Konyvkereso.ViewModels
             } 
         }
 
+        /// <summary>
+        /// Starts a search based on book's title
+        /// </summary>
+        /// <param name="author">The name of the author</param>
+        /// <param name="pageNumber">The current page</param>
+        /// <param name="sortMethod">The current sorting method</param>
+        /// <returns></returns>
         private async Task SearchByTitle(string title, int pageNumber, SortCategories sortMethod)
         {
             var searchResult = await bookService.getBookByTitleAsynch(title, pageNumber, sortMethod);
@@ -96,15 +107,33 @@ namespace Konyvkereso.ViewModels
             Results.AddRange<Docs>(searchResult.Docs);
         }
 
+        /// <summary>
+        /// Starts a search based on book's author
+        /// </summary>
+        /// <param name="author">The name of the author</param>
+        /// <param name="pageNumber">The current page</param>
+        /// <param name="sortMethod">The current sorting method</param>
+        /// <returns></returns>
         private async Task SearchByAuthor(string author, int pageNumber, SortCategories sortMethod)
         {
-            
             var searchResult = await bookService.getBookByAuthorAsynch(author);
             UpdatePagingInfo(searchResult);
 
             Results.Clear();
             Results.AddRange<Docs>(searchResult.Docs);
         }
+
+        /// <summary>
+        /// The paging info will be updated so the view should be up to date
+        /// </summary>
+        /// <param name="result"></param>
+        private void UpdatePagingInfo(SearchResult result)
+        {
+            pageCount = result.Num_found / result.Docs.Count;
+            PageText = String.Format("{0}/{1}", currentPage, pageCount);
+        }
+
+        #region Functions for the UI controllers
 
         /// <summary>
         /// Navigates to the Detail Screen
@@ -115,12 +144,9 @@ namespace Konyvkereso.ViewModels
             NavigationService.Navigate(typeof(Views.DetailPage), bookPath);
         }
 
-        private void UpdatePagingInfo(SearchResult result)
-        {
-            pageCount = result.Num_found / result.Docs.Count;
-            PageText = String.Format("{0}/{1}", currentPage, pageCount);
-        }
-
+        /// <summary>
+        /// Pages forward
+        /// </summary>
         public void PageForward()
         {
             if(currentPage != 0 && currentPage == pageCount)
@@ -135,6 +161,9 @@ namespace Konyvkereso.ViewModels
             }
         }
 
+        /// <summary>
+        /// Pages backward
+        /// </summary>
         public void PageBack()
         {
             if(currentPage != 0 && currentPage == 1)
@@ -147,15 +176,21 @@ namespace Konyvkereso.ViewModels
                 currentPage--;
                 Search();
             }
-            
         }
 
+        /// <summary>
+        /// When the search button has been clicked it will search for books
+        /// </summary>
         public void ButtonSearch()
         {
             currentPage = 1;
             Search();
         }
 
+        /// <summary>
+        /// Sets the search method
+        /// </summary>
+        /// <param name="category">The checkbox value</param>
         public void SearchCategoryChanged(string category)
         {
             switch (category)
@@ -173,7 +208,10 @@ namespace Konyvkereso.ViewModels
                     break;
             }
         }
-
+        /// <summary>
+        /// Sets the sorting method
+        /// </summary>
+        /// <param name="category">The checkbox value</param>
         public void SortingMethodChanged(string category)
         {
             switch (category)
@@ -199,5 +237,7 @@ namespace Konyvkereso.ViewModels
                     break;
             }
         }
+
+        #endregion
     }
 }

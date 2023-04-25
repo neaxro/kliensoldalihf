@@ -32,28 +32,12 @@ namespace Konyvkereso
         private void SearchCategoryCombobox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             string category = (sender as ComboBox).SelectedItem.ToString();
-            /*switch (category)
-            {
-                case "Title":
-                    ViewModel.SearchCategory = Konyvkereso.ViewModels.MainPageViewModel.SearchCategories.Title;
-                    break;
-
-                case "Author":
-                    ViewModel.SearchCategory = Konyvkereso.ViewModels.MainPageViewModel.SearchCategories.Author;
-                    break;
-
-                default:
-                    ViewModel.SearchCategory = Konyvkereso.ViewModels.MainPageViewModel.SearchCategories.Title;
-                    break;
-            }*/
             ViewModel.SearchCategoryChanged(category);
         }
 
         private void BookGroups_ItemClicked(object sender, ItemClickEventArgs e)
         {
-            Debug.WriteLine("Item Clicked");
             var selectedBook = (Docs)e.ClickedItem;
-
             ViewModel.NavigateToDetailsPage(selectedBook.Key);
         }
 
@@ -75,7 +59,6 @@ namespace Konyvkereso
         private void SortCategoryCombobox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             string category = (sender as ComboBox).SelectedItem.ToString();
-            Debug.WriteLine("SORT CAT: " + category);
             ViewModel.SortingMethodChanged(category);
         }
     }

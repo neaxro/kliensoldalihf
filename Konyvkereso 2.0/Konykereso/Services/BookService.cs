@@ -14,9 +14,18 @@ namespace Konyvkereso.Services
 {
     public class BookService
     {
+        // Base url for the API
         private readonly Uri BooksApiUrl = new Uri("https://openlibrary.org/");
+
+        // The possible cover sizes
         private enum CoverSize { Large, Medium, Small };
 
+        /// <summary>
+        /// Gets data from the API
+        /// </summary>
+        /// <typeparam name="T">Type</typeparam>
+        /// <param name="uri">The url for the data</param>
+        /// <returns>Data</returns>
         private async Task<T> GetAsync<T>(Uri uri)
         {
             using (var client = new HttpClient())
@@ -28,6 +37,13 @@ namespace Konyvkereso.Services
             }
         }
 
+        /// <summary>
+        /// Gets a set of books by book title
+        /// </summary>
+        /// <param name="title">Book's title</param>
+        /// <param name="pageNumber">Page number</param>
+        /// <param name="sortMethod">Sorting method</param>
+        /// <returns>Books</returns>
         public async Task<SearchResult> getBookByTitleAsynch(string title, int pageNumber = 1, SortCategories sortMethod = SortCategories.Title)
         {
             string relativeUri = String.Format("search.json?title={0}&page={1}&sort={2}", title.ToLower().Replace(" ", "+"), pageNumber, getSortCategoryValue(sortMethod));
@@ -42,6 +58,13 @@ namespace Konyvkereso.Services
             return result;
         }
 
+        /// <summary>
+        /// Gets a set of books by an Author
+        /// </summary>
+        /// <param name="author">Author's name</param>
+        /// <param name="pageNumber">Page number</param>
+        /// <param name="sortMethod">Sorting method</param>
+        /// <returns>Books</returns>
         public async Task<SearchResult> getBookByAuthorAsynch(string author, int pageNumber = 1, SortCategories sortMethod = SortCategories.Title)
         {
             string relativeUri = String.Format("search.json?author={0}&page={1}&sort={2}", author.ToLower().Replace(" ", "+"), pageNumber, getSortCategoryValue(sortMethod));
@@ -50,6 +73,11 @@ namespace Konyvkereso.Services
             return result;
         }
 
+        /// <summary>
+        /// Gets a deailed information about a book
+        /// </summary>
+        /// <param name="key">The book's ID/Key</param>
+        /// <returns>Data about the book</returns>
         public async Task<BookDetail> getDetailedBookInfo(string key)
         {
             try
@@ -87,7 +115,12 @@ namespace Konyvkereso.Services
             }
         }
 
-        public async Task<AuthorDetail> getAuthor(string key)
+        /// <summary>
+        /// Gets an author by the author ID/Key
+        /// </summary>
+        /// <param name="key">Author's key</param>
+        /// <returns>Data about the author</returns>
+        private async Task<AuthorDetail> getAuthor(string key)
         {
             try
             {
@@ -108,6 +141,12 @@ namespace Konyvkereso.Services
             }
         }
 
+        /// <summary>
+        /// It will convert the enum to string witch will be used in the url
+        /// </summary>
+        /// <param name="coverID">The ID of the book</param>
+        /// <param name="size">The size/resolution of the cover picture (S/M/L)</param>
+        /// <returns>string for url</returns>
         private string getCoverUrl(int coverID, CoverSize size)
         {
             switch (size)
@@ -123,6 +162,11 @@ namespace Konyvkereso.Services
             }
         }
 
+        /// <summary>
+        /// It will convert the enum to string witch will be used in the url
+        /// </summary>
+        /// <param name="category">The selected category type</param>
+        /// <returns>string for url</returns>
         private string getSortCategoryValue(SortCategories category)
         {
             switch (category)

@@ -32,13 +32,7 @@ namespace Konyvkereso.Views
         private void AuthorGroups_ItemClicked(object sender, ItemClickEventArgs e)
         {
             AuthorDetail author = (AuthorDetail)e.ClickedItem;
-            
-            if(author.wikipedia == null)
-            {
-                ViewModel.NavigateToWebUrl(String.Format("https://openlibrary.org{0}", author.key));
-            }
-
-            ViewModel.NavigateToWebUrl(author.wikipedia);
+            ViewModel.NavigateToAuthorWeb(author);
         }
     }
 }
