@@ -28,8 +28,10 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
 
+        <!-- Kereso -->
         <StackPanel
             Grid.Row="0"
             Orientation="Horizontal"
@@ -56,11 +58,12 @@
                 Text="{Binding SearchText, Mode=TwoWay}"
                 />
 
-            <Button Command="{ Binding TryApiCommand }">Search</Button>
+            <!-- <Button Command="{ Binding RunSearchCommand }">Search</Button> -->
+            <Button Click="SearchButton_ItemClicked">Search</Button>
 
         </StackPanel>
 
-        <!-- ADATOK LISTAZASA MASODIK SORBA -->
+        <!-- Adatok -->
         <GridView 
            Grid.Row="1"
             ItemsSource="{Binding Source={StaticResource SearchResults}}"
@@ -104,5 +107,18 @@
             </GridView.ItemTemplate>
 
         </GridView>
+
+        <!-- Lapozas -->
+        <StackPanel
+            Grid.Row="2"
+            Orientation="Horizontal"
+            HorizontalAlignment="Center"
+            Padding="15">
+
+            <Button Content="Back" Width="100" Click="PageBack_ButtonClicked"/>
+            <TextBlock Text="{Binding PageText, Mode=OneWay}" Width="100" TextAlignment="Center"/>
+            <Button Content="Forward" Width="100" Click="PageForward_ButtonClicked"/>
+
+        </StackPanel>
     </Grid>
 </Page>

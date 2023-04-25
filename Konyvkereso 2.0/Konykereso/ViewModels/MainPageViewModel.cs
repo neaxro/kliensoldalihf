@@ -3,7 +3,9 @@ using Konyvkereso.Services;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using Template10.Mvvm;
@@ -13,35 +15,42 @@ using Windows.UI.Xaml.Navigation;
 
 namespace Konyvkereso.ViewModels
 {
-    public class MainPageViewModel : ViewModelBase
+    public class MainPageViewModel : ViewModelBase, INotifyPropertyChanged
     {
-        public ObservableCollection<Docs> Results { get; set; } = new ObservableCollection<Docs>();
+        // Service for API
         private BookService bookService = new BookService();
-        public DelegateCommand TryApiCommand { get; }
-        public enum SearchCategories { Title = 0, Author = 1 };
 
-        public MainPageViewModel()
-        {
-            TryApiCommand = new DelegateCommand(Search);
-        }
+        // Enums
+        public enum SearchCategories { Title, Author };
+        public enum SortCategories { Old, New, Title, Random };
 
-        public override async Task OnNavigatedToAsync(object parameter, NavigationMode mode, IDictionary<string, object> state)
+        // List of the books
+        public ObservableCollection<Docs> Results { get; set; } = new ObservableCollection<Docs>();
+        // Paging data
+        private int pageCount = 0;
+        private int currentPage = 1;
+        private string _pageText = "0/0";
+        public string PageText
         {
-            if(SearchText.Length > 0)
+            get { return _pageText; }
+            set
             {
-                Search();
+                _pageText = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(PageText)));
             }
-
-            await base.OnNavigatedToAsync(parameter, mode, state);
         }
+        public event PropertyChangedEventHandler PropertyChanged;
 
+        // Search text
         private string _searchText = "Harry Potter";
+        private string lastSearchText = "";
         public string SearchText
         {
             get { return _searchText; }
             set { _searchText = value; }
         }
 
+        // Searchable categories
         private SearchCategories _searchCategory;
         public SearchCategories SearchCategory
         {
@@ -49,37 +58,84 @@ namespace Konyvkereso.ViewModels
             set { _searchCategory = value; }
         }
 
-        public async void Search()
+        // Sortable categories
+        private SortCategories _sortCategory;
+        public SortCategories SortCategory
+        {
+            get { return _sortCategory; }
+            set { _sortCategory = value; }
+        }
+
+        private async void Search()
         {
             switch (SearchCategory)
             {
                 case SearchCategories.Title:
-                    await SearchByTitle(SearchText);
+                    await SearchByTitle(SearchText, currentPage, SortCategory);
                     break;
 
                 case SearchCategories.Author:
-                    await SearchByAuthor(SearchText);
+                    await SearchByAuthor(SearchText, currentPage, SortCategory);
                     break;
-            }
+            } 
         }
 
-        public async Task SearchByTitle(string title)
+        private async Task SearchByTitle(string title, int pageNumber, SortCategories sortMethod)
         {
+            var searchResult = await bookService.getBookByTitleAsynch(title, pageNumber, sortMethod);
+            UpdatePagingInfo(searchResult);
+
             Results.Clear();
-            var searchResult = await bookService.getBookByTitleAsynch(title);
             Results.AddRange<Docs>(searchResult.Docs);
         }
 
-        public async Task SearchByAuthor(string author)
+        private async Task SearchByAuthor(string author, int pageNumber, SortCategories sortMethod)
         {
-            Results.Clear();
+            
             var searchResult = await bookService.getBookByAuthorAsynch(author);
+            UpdatePagingInfo(searchResult);
+
+            Results.Clear();
             Results.AddRange<Docs>(searchResult.Docs);
         }
 
+        /// <summary>
+        /// Navigates to the Detail Screen
+        /// </summary>
+        /// <param name="bookPath"></param>
         public void NavigateToDetailsPage(string bookPath)
         {
             NavigationService.Navigate(typeof(Views.DetailPage), bookPath);
+        }
+
+        private void UpdatePagingInfo(SearchResult result)
+        {
+            pageCount = result.Num_found / result.Docs.Count;
+            PageText = String.Format("{0}/{1}", currentPage, pageCount);
+        }
+
+        public void PageForward()
+        {
+            if(currentPage < pageCount)
+            {
+                currentPage++;
+                Search();
+            }
+        }
+
+        public void PageBack()
+        {
+            if (0 < currentPage)
+            {
+                currentPage--;
+                Search();
+            }
+        }
+
+        public void ButtonSearch()
+        {
+            currentPage = 1;
+            Search();
         }
     }
 }

@@ -28,15 +28,17 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
 
+        <!-- Kereso -->
         <StackPanel
             Grid.Row="0"
             Orientation="Horizontal"
             HorizontalAlignment="Center"
             Padding="15">
 
-            <ComboBox x:ConnectionId='5'
+            <ComboBox x:ConnectionId='7'
                 x:Name="SearchCategory"
                 PlaceholderText="Pick search category"
                 MinWidth="200"
@@ -48,7 +50,7 @@
                 <x:String>Author</x:String>
             </ComboBox>
 
-            <TextBox x:ConnectionId='6'
+            <TextBox x:ConnectionId='8'
                 x:Name="SearchText"
                 PlaceholderText="Search..."
                 MinWidth="300"
@@ -56,11 +58,12 @@
                 Text="{Binding SearchText, Mode=TwoWay}"
                 />
 
-            <Button Command="{ Binding TryApiCommand }">Search</Button>
+            <!-- <Button Command="{ Binding RunSearchCommand }">Search</Button> -->
+            <Button x:ConnectionId='9'                                 >Search</Button>
 
         </StackPanel>
 
-        <!-- ADATOK LISTAZASA MASODIK SORBA -->
+        <!-- Adatok -->
         <GridView x:ConnectionId='3' 
            Grid.Row="1"
             ItemsSource="{Binding Source={StaticResource SearchResults}}"
@@ -104,6 +107,19 @@
             </GridView.ItemTemplate>
 
         </GridView>
+
+        <!-- Lapozas -->
+        <StackPanel
+            Grid.Row="2"
+            Orientation="Horizontal"
+            HorizontalAlignment="Center"
+            Padding="15">
+
+            <Button x:ConnectionId='4' Content="Back" Width="100"                               />
+            <TextBlock Text="{Binding PageText, Mode=OneWay}" Width="100" TextAlignment="Center"/>
+            <Button x:ConnectionId='5' Content="Forward" Width="100"                                  />
+
+        </StackPanel>
     </Grid>
 </Page>
 

@@ -8,6 +8,7 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using Windows.Foundation;
+using static Konyvkereso.ViewModels.MainPageViewModel;
 
 namespace Konyvkereso.Services
 {
@@ -27,9 +28,10 @@ namespace Konyvkereso.Services
             }
         }
 
-        public async Task<SearchResult> getBookByTitleAsynch(string title)
+        public async Task<SearchResult> getBookByTitleAsynch(string title, int pageNumber = 1, SortCategories sortMethod = SortCategories.Title)
         {
-            Uri titleSearchUri = new Uri(BooksApiUrl, $"/search.json?title={title}");
+            string relativeUri = String.Format("search.json?title={0}&page={1}&sort={2}", title.ToLower().Replace(" ", "+"), pageNumber, getSortCategoryValue(sortMethod));
+            Uri titleSearchUri = new Uri(BooksApiUrl, relativeUri);
             SearchResult result = await GetAsync<SearchResult>(titleSearchUri);
 
             foreach (var book in result.Docs)
@@ -114,6 +116,18 @@ namespace Konyvkereso.Services
                     return String.Format("https://covers.openlibrary.org/b/id/{0}-L.jpg", coverID);
                 default:
                     return String.Format("https://covers.openlibrary.org/b/id/{0}-M.jpg", coverID);
+            }
+        }
+
+        private string getSortCategoryValue(SortCategories category)
+        {
+            switch (category)
+            {
+                case SortCategories.New: return "new";
+                case SortCategories.Old: return "old";
+                case SortCategories.Random: return "random";
+                case SortCategories.Title: return "title";
+                default: return "title";
             }
         }
     }

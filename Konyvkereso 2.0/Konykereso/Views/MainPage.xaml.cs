@@ -55,5 +55,20 @@ namespace Konyvkereso
 
             ViewModel.NavigateToDetailsPage(selectedBook.Key);
         }
+
+        private void PageBack_ButtonClicked(object sender, RoutedEventArgs e)
+        {
+            ViewModel.PageBack();
+        }
+
+        private void PageForward_ButtonClicked(object sender, RoutedEventArgs e)
+        {
+            ViewModel.PageForward();
+        }
+
+        private void SearchButton_ItemClicked(object sender, RoutedEventArgs e)
+        {
+            ViewModel.ButtonSearch();
+        }
     }
 }
