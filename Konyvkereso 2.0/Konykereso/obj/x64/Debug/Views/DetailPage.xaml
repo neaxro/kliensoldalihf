@@ -49,55 +49,118 @@
                 <StackPanel>
 
                     <!-- Description section -->
-                    <TextBlock Text="Description" FontSize="30" FontWeight="Bold"/>
-                    <TextBlock
-                        Text="{Binding Book.description}"
-                        Width="auto"/>
+                    <StackPanel Padding="10">
+                        <TextBlock Text="Description" FontSize="30" FontWeight="Bold"/>
+                        <TextBlock
+                            Text="{Binding Book.description}"
+                            Width="auto"/>
+                    </StackPanel>
+
+                    <!-- Authors -->
+                    <StackPanel Padding="10">
+                        <TextBlock Text="Authors" FontSize="30" FontWeight="Bold"/>
+                        <GridView
+                                ItemsSource="{Binding Book.authors}"
+                                IsItemClickEnabled="False"
+                                Padding="10">
+
+                            <GridView.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel>
+                                        <HyperlinkButton Content="{Binding}" NavigateUri="{Binding author.key}"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </GridView.ItemTemplate>
+
+                        </GridView>
+                    </StackPanel>
 
                     <!-- Subjects -->
+                    <StackPanel Padding="10">
                     <TextBlock Text="Subjects" FontSize="30" FontWeight="Bold"/>
-                    <GridView
-                            ItemsSource="{Binding Book.subjects}"
+                        <GridView
+                                ItemsSource="{Binding Book.subjects}"
+                                IsItemClickEnabled="False"
+                                Padding="10">
+
+                            <GridView.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel>
+                                        <TextBlock Text="{Binding}" TextTrimming="WordEllipsis" Width="200"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </GridView.ItemTemplate>
+
+                        </GridView>
+                    </StackPanel>
+                    
+                    <!-- People -->
+                    <StackPanel Padding="10">
+                        <TextBlock Text="People" FontSize="30" FontWeight="Bold"/>
+                        <GridView
+                            ItemsSource="{Binding Book.subject_people}"
                             IsItemClickEnabled="False"
                             Padding="10">
 
-                        <GridView.ItemTemplate>
-                            <DataTemplate>
-                                <StackPanel>
-                                    <TextBlock Text="{Binding}" TextTrimming="WordEllipsis" Width="200"/>
-                                </StackPanel>
-                            </DataTemplate>
-                        </GridView.ItemTemplate>
+                            <GridView.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel>
+                                        <TextBlock Text="{Binding}" TextTrimming="WordEllipsis" Width="200"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </GridView.ItemTemplate>
 
-                    </GridView>
+                        </GridView>
+                    </StackPanel>
+
+                    <!-- Places -->
+                    <StackPanel Padding="10">
+                        <TextBlock Text="Places" FontSize="30" FontWeight="Bold"/>
+                        <GridView
+                            ItemsSource="{Binding Book.subject_places}"
+                            IsItemClickEnabled="False"
+                            Padding="10">
+
+                            <GridView.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel>
+                                        <TextBlock Text="{Binding}" TextTrimming="WordEllipsis" Width="200"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </GridView.ItemTemplate>
+
+                        </GridView>
+                    </StackPanel>
 
                     <!-- Links -->
-                    <TextBlock Text="Links to this book" FontSize="30" FontWeight="Bold"/>
-                    <ScrollViewer
+                    <StackPanel Padding="10">
+                        <TextBlock Text="Links to this book" FontSize="30" FontWeight="Bold"/>
+                        <ScrollViewer
                         HorizontalScrollMode="Enabled"
                         HorizontalScrollBarVisibility="Visible"
                         VerticalScrollMode="Disabled"
                         VerticalScrollBarVisibility="Hidden">
-                        
-                        <ListView
+
+                            <ListView
                             ItemsSource="{Binding Book.links}"
                             Padding="10">
 
-                            <ListView.ItemTemplate>
-                                <DataTemplate>
-                                    <HyperlinkButton Content="{Binding title}" NavigateUri="{Binding url}"/>
-                                </DataTemplate>
-                            </ListView.ItemTemplate>
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <HyperlinkButton Content="{Binding title}" NavigateUri="{Binding url}"/>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
 
-                            <ListView.ItemsPanel>
-                                <ItemsPanelTemplate>
-                                    <StackPanel Orientation="Horizontal"></StackPanel>
-                                </ItemsPanelTemplate>
-                            </ListView.ItemsPanel>
+                                <ListView.ItemsPanel>
+                                    <ItemsPanelTemplate>
+                                        <StackPanel Orientation="Horizontal"></StackPanel>
+                                    </ItemsPanelTemplate>
+                                </ListView.ItemsPanel>
 
-                        </ListView>
-                    </ScrollViewer>
-                    
+                            </ListView>
+                        </ScrollViewer>
+                    </StackPanel>
+
                 </StackPanel>
             </ScrollViewer>
         </Grid>
