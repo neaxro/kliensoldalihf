@@ -29,12 +29,13 @@
         
         <c:PageHeader Grid.Row="0" Grid.ColumnSpan="2" Content="{Binding Book.title}"/>
 
+        <!-- ms-appx:///Assets/Square150x150Logo.scale-200.png -->
         <Image
             Grid.Column="0"
             Grid.Row="1"
             Width="300"
             Stretch="Uniform"
-            Source="ms-appx:///Assets/Square150x150Logo.scale-200.png"/>
+            Source="{Binding Book.coverUrl}"/>
 
         <StackPanel
             Grid.Row="1"

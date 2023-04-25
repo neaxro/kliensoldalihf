@@ -34,7 +34,7 @@ namespace Konyvkereso.ViewModels
             await base.OnNavigatedToAsync(parameter, mode, state);
         }
 
-        private string _searchText = "";
+        private string _searchText = "Harry Potter";
         public string SearchText
         {
             get { return _searchText; }

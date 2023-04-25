@@ -6,6 +6,7 @@
     <RootPropertyPathName Name="links" />
     <RootPropertyPathName Name="title" />
     <RootPropertyPathName Name="url" />
+    <RootPropertyPathName Name="coverUrl" />
     <RootPropertyPathName Name="Books" />
     <RootPropertyPathName Name="Results" />
     <RootPropertyPathName Name="Author_name" />

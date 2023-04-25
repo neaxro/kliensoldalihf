@@ -2,6 +2,7 @@
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Net.Http;
 using System.Text;
@@ -40,9 +41,17 @@ namespace Konyvkereso.Services
 
         public async Task<BookDetail> getDetailedBookInfo(string key)
         {
-            Uri detailedBookUri = new Uri(BooksApiUrl, String.Format("{0}.json", key));
-            BookDetail result = await GetAsync<BookDetail>(detailedBookUri);
-            return result;
+            try
+            {
+                Uri detailedBookUri = new Uri(BooksApiUrl, String.Format("{0}.json", key));
+                BookDetail result = await GetAsync<BookDetail>(detailedBookUri);
+                result.coverUrl = String.Format("https://covers.openlibrary.org/b/id/{0}-L.jpg", result.covers[0]);
+                return result;
+            } catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+                return new InvalidBookDetail("Invalid UTF character(s)!");
+            }
         }
     }
 }
