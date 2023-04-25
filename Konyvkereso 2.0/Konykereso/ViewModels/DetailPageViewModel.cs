@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Template10.Mvvm;
+using Windows.Media.Effects;
 using Windows.UI.Xaml.Navigation;
 
 namespace Konyvkereso.ViewModels
@@ -30,6 +31,12 @@ namespace Konyvkereso.ViewModels
             Book = await bookService.getDetailedBookInfo(bookKey);
 
             await base.OnNavigatedToAsync(parameter, mode, state);
+        }
+
+        public async void NavigateToWebUrl(string webUrl)
+        {
+            if (webUrl == null) return;
+            await Windows.System.Launcher.LaunchUriAsync(new Uri(webUrl));
         }
     }
 }

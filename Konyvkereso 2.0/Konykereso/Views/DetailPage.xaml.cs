@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Konyvkereso.Models;
+using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -25,6 +27,18 @@ namespace Konyvkereso.Views
         public DetailPage()
         {
             this.InitializeComponent();
+        }
+
+        private void AuthorGroups_ItemClicked(object sender, ItemClickEventArgs e)
+        {
+            AuthorDetail author = (AuthorDetail)e.ClickedItem;
+            
+            if(author.wikipedia == null)
+            {
+                ViewModel.NavigateToWebUrl(String.Format("https://openlibrary.org{0}", author.key));
+            }
+
+            ViewModel.NavigateToWebUrl(author.wikipedia);
         }
     }
 }

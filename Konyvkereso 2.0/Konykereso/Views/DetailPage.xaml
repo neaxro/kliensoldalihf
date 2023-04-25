@@ -30,12 +30,14 @@
         <c:PageHeader Grid.Row="0" Grid.ColumnSpan="2" Content="{Binding Book.title}"/>
 
         <!-- ms-appx:///Assets/Square150x150Logo.scale-200.png -->
+
         <Image
             Grid.Column="0"
             Grid.Row="1"
             Width="300"
             Stretch="Uniform"
-            Source="{Binding Book.coverUrl}"/>
+            Source="{Binding Book.coverUrl}"
+            />
 
         <Grid
             Grid.Row="1"
@@ -53,7 +55,7 @@
                         <TextBlock Text="Description" FontSize="30" FontWeight="Bold"/>
                         <TextBlock
                             Text="{Binding Book.description}"
-                            Width="auto"/>
+                            TextWrapping="WrapWholeWords"/>
                     </StackPanel>
 
                     <!-- Authors -->
@@ -61,7 +63,8 @@
                         <TextBlock Text="Authors" FontSize="30" FontWeight="Bold"/>
                         <GridView
                                 ItemsSource="{Binding Book.authorDetails}"
-                                IsItemClickEnabled="False"
+                                IsItemClickEnabled="True"
+                                ItemClick="AuthorGroups_ItemClicked"
                                 Padding="10">
 
                                 <GridView.ItemTemplate>
