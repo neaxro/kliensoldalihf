@@ -5,12 +5,14 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
+using System.Reflection.Context;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using Template10.Mvvm;
 using Template10.Services.NavigationService;
 using Template10.Utils;
+using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
 
 namespace Konyvkereso.ViewModels
@@ -28,7 +30,7 @@ namespace Konyvkereso.ViewModels
         public ObservableCollection<Docs> Results { get; set; } = new ObservableCollection<Docs>();
         // Paging data
         private int pageCount = 0;
-        private int currentPage = 1;
+        private int currentPage = 0;
         private string _pageText = "0/0";
         public string PageText
         {
@@ -68,6 +70,11 @@ namespace Konyvkereso.ViewModels
 
         private async void Search()
         {
+            if(currentPage == 0)
+            {
+                currentPage = 1;
+            }
+
             switch (SearchCategory)
             {
                 case SearchCategories.Title:
@@ -116,7 +123,12 @@ namespace Konyvkereso.ViewModels
 
         public void PageForward()
         {
-            if(currentPage < pageCount)
+            if(currentPage != 0 && currentPage == pageCount)
+            {
+                currentPage = 1;
+                Search();
+            }
+            else if(currentPage < pageCount)
             {
                 currentPage++;
                 Search();
@@ -125,17 +137,67 @@ namespace Konyvkereso.ViewModels
 
         public void PageBack()
         {
-            if (0 < currentPage)
+            if(currentPage != 0 && currentPage == 1)
+            {
+                currentPage = pageCount;
+                Search();
+            }
+            else if (0 < currentPage)
             {
                 currentPage--;
                 Search();
             }
+            
         }
 
         public void ButtonSearch()
         {
             currentPage = 1;
             Search();
+        }
+
+        public void SearchCategoryChanged(string category)
+        {
+            switch (category)
+            {
+                case "Title":
+                    SearchCategory = SearchCategories.Title;
+                    break;
+
+                case "Author":
+                    SearchCategory = SearchCategories.Author;
+                    break;
+
+                default:
+                    SearchCategory = SearchCategories.Title;
+                    break;
+            }
+        }
+
+        public void SortingMethodChanged(string category)
+        {
+            switch (category)
+            {
+                case "Title":
+                    SortCategory = SortCategories.Title;
+                    break;
+
+                case "Old":
+                    SortCategory = SortCategories.Old;
+                    break;
+
+                case "New":
+                    SortCategory = SortCategories.New;
+                    break;
+
+                case "Random":
+                    SortCategory = SortCategories.Random;
+                    break;
+
+                default:
+                    SortCategory = SortCategories.Title;
+                    break;
+            }
         }
     }
 }

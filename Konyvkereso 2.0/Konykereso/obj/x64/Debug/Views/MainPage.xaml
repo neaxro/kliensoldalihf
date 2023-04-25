@@ -36,30 +36,50 @@
             Grid.Row="0"
             Orientation="Horizontal"
             HorizontalAlignment="Center"
+            VerticalAlignment="Bottom"
             Padding="15">
 
             <ComboBox x:ConnectionId='7'
+                x:Name="SortCategory"
+                PlaceholderText="Pick sorting method"
+                Header="Sorting method"
+                MinWidth="200"
+                MaxWidth="400"
+                                                                        
+                SelectedIndex="0">
+                <x:String>Title</x:String>
+                <x:String>New</x:String>
+                <x:String>Old</x:String>
+                <x:String>Random</x:String>
+            </ComboBox>
+
+            <ComboBox x:ConnectionId='8'
                 x:Name="SearchCategory"
                 PlaceholderText="Pick search category"
+                Header="Search Category"
                 MinWidth="200"
                 MaxWidth="400"
                                                                           
-                SelectedIndex="0"
-                >
+                SelectedIndex="0">
                 <x:String>Title</x:String>
                 <x:String>Author</x:String>
             </ComboBox>
 
-            <TextBox x:ConnectionId='8'
+            <TextBox x:ConnectionId='9'
                 x:Name="SearchText"
                 PlaceholderText="Search..."
+                Header="Search expression"
                 MinWidth="300"
                 MaxWidth="600"
                 Text="{Binding SearchText, Mode=TwoWay}"
                 />
 
             <!-- <Button Command="{ Binding RunSearchCommand }">Search</Button> -->
-            <Button x:ConnectionId='9'                                 >Search</Button>
+            <Button x:ConnectionId='10'
+                                                
+                VerticalAlignment="Bottom">
+                Search
+            </Button>
 
         </StackPanel>
 

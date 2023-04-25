@@ -42,9 +42,10 @@ namespace Konyvkereso.Services
             return result;
         }
 
-        public async Task<SearchResult> getBookByAuthorAsynch(string author)
+        public async Task<SearchResult> getBookByAuthorAsynch(string author, int pageNumber = 1, SortCategories sortMethod = SortCategories.Title)
         {
-            Uri authorSearchUri = new Uri(BooksApiUrl, $"/search.json?author={author}");
+            string relativeUri = String.Format("search.json?author={0}&page={1}&sort={2}", author.ToLower().Replace(" ", "+"), pageNumber, getSortCategoryValue(sortMethod));
+            Uri authorSearchUri = new Uri(BooksApiUrl, relativeUri);
             SearchResult result = await GetAsync<SearchResult>(authorSearchUri);
             return result;
         }
@@ -64,13 +65,16 @@ namespace Konyvkereso.Services
 
                 // Load all author details
                 List<AuthorDetail> authorList = new List<AuthorDetail>();
-                foreach(var author in result.authors)
+                if(result.authors != null)
                 {
-                    if(author == null) continue;
-                    var authorResult = await getAuthor(author.author.key);
-                    if(authorResult != null)
+                    foreach (var author in result.authors)
                     {
-                        authorList.Add(authorResult);
+                        if (author == null) continue;
+                        var authorResult = await getAuthor(author.author.key);
+                        if (authorResult != null)
+                        {
+                            authorList.Add(authorResult);
+                        }
                     }
                 }
                 result.authorDetails = authorList;
