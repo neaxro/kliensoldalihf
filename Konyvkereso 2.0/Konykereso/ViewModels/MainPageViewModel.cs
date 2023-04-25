@@ -46,7 +46,7 @@ namespace Konyvkereso.ViewModels
         }
         
         // Search text
-        private string _searchText = "Harry Potter";
+        private string _searchText = "";
         public string SearchText
         {
             get { return _searchText; }
@@ -74,6 +74,7 @@ namespace Konyvkereso.ViewModels
         /// </summary>
         private async void Search()
         {
+            if (SearchText.Length == 0) return;
             if(currentPage == 0)
             {
                 currentPage = 1;
@@ -129,7 +130,16 @@ namespace Konyvkereso.ViewModels
         /// <param name="result"></param>
         private void UpdatePagingInfo(SearchResult result)
         {
-            pageCount = result.Num_found / result.Docs.Count;
+            if(result.Docs.Count > 0)
+            {
+                pageCount = result.Num_found / result.Docs.Count;
+            }
+            else
+            {
+                pageCount = 0;
+                currentPage = 0;
+            }
+
             PageText = String.Format("{0}/{1}", currentPage, pageCount);
         }
 
