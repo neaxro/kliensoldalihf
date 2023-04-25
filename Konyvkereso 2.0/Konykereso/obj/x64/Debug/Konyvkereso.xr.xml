@@ -8,11 +8,11 @@
     <RootPropertyPathName Name="subject_places" />
     <RootPropertyPathName Name="subject_people" />
     <RootPropertyPathName Name="subjects" />
-    <RootPropertyPathName Name="authors" />
-    <RootPropertyPathName Name="author" />
-    <RootPropertyPathName Name="key" />
-    <RootPropertyPathName Name="description" />
+    <RootPropertyPathName Name="authorDetails" />
+    <RootPropertyPathName Name="personal_name" />
+    <RootPropertyPathName Name="name" />
     <RootPropertyPathName Name="coverUrl" />
+    <RootPropertyPathName Name="description" />
     <RootPropertyPathName Name="Books" />
     <RootPropertyPathName Name="Results" />
     <RootPropertyPathName Name="Author_name" />
@@ -118,6 +118,11 @@
       <RootProperty Name="CacheMode" />
       <RootEvent Name="ItemClick" />
     </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.Border">
+      <RootProperty Name="Background" />
+      <RootProperty Name="VerticalAlignment" />
+      <RootProperty Name="Child" />
+    </RootType>
     <RootType FullName="Konyvkereso.Views.DetailPage" />
     <RootType FullName="Konyvkereso.ViewModels.MainPageViewModel" />
     <RootType FullName="Windows.UI.Xaml.Data.CollectionViewSource">
@@ -125,11 +130,6 @@
       <RootProperty Name="ItemsPath" />
     </RootType>
     <RootType FullName="Microsoft.Xaml.DirectUI.ProxyTypes.StaticResourceExtension" />
-    <RootType FullName="Windows.UI.Xaml.Controls.Border">
-      <RootProperty Name="Background" />
-      <RootProperty Name="VerticalAlignment" />
-      <RootProperty Name="Child" />
-    </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.ComboBox">
       <RootProperty Name="PlaceholderText" />
       <RootProperty Name="MinWidth" />

@@ -60,17 +60,43 @@
                     <StackPanel Padding="10">
                         <TextBlock Text="Authors" FontSize="30" FontWeight="Bold"/>
                         <GridView
-                                ItemsSource="{Binding Book.authors}"
+                                ItemsSource="{Binding Book.authorDetails}"
                                 IsItemClickEnabled="False"
                                 Padding="10">
 
-                            <GridView.ItemTemplate>
-                                <DataTemplate>
-                                    <StackPanel>
-                                        <HyperlinkButton Content="{Binding}" NavigateUri="{Binding author.key}"/>
-                                    </StackPanel>
-                                </DataTemplate>
-                            </GridView.ItemTemplate>
+                                <GridView.ItemTemplate>
+                                    <DataTemplate>
+                                        <Grid
+                                            Height="200"
+                                            Width="200">
+
+                                            <Image
+                                                Stretch="UniformToFill"
+                                                VerticalAlignment="Center"
+                                                Source="{Binding coverUrl}"/>
+
+                                            <Border
+                                                Background="Black"
+                                                VerticalAlignment="Bottom"> 
+                                                
+                                                <StackPanel
+                                                    Padding="5">
+                                                    <TextBlock
+                                                        Text="{Binding name}"
+                                                        Foreground="White"
+                                                        FontSize="20"
+                                                        TextTrimming="WordEllipsis"/>
+
+                                                    <TextBlock
+                                                        Text="{Binding personal_name}"
+                                                        Foreground="LightGray"
+                                                        FontSize="15"/> 
+                                                </StackPanel>
+                                            </Border>
+
+                                        </Grid>
+                                    </DataTemplate>
+                                </GridView.ItemTemplate>    
 
                         </GridView>
                     </StackPanel>

@@ -29,6 +29,7 @@ namespace Konyvkereso.Models
         public Last_Modified last_modified { get; set; }
 
         public string coverUrl { get; set; }
+        public List<AuthorDetail> authorDetails { get; set; }
     }
 
     public class Type

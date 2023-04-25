@@ -54,10 +54,24 @@ namespace Konyvkereso.Services
                 Uri detailedBookUri = new Uri(BooksApiUrl, String.Format("{0}.json", key));
                 BookDetail result = await GetAsync<BookDetail>(detailedBookUri);
                 
+                // Set coverUrl from coverId for Image
                 if(result.covers != null)
                 {
                     result.coverUrl = getCoverUrl(result.covers[0], CoverSize.Large);
                 }
+
+                // Load all author details
+                List<AuthorDetail> authorList = new List<AuthorDetail>();
+                foreach(var author in result.authors)
+                {
+                    if(author == null) continue;
+                    var authorResult = await getAuthor(author.author.key);
+                    if(authorResult != null)
+                    {
+                        authorList.Add(authorResult);
+                    }
+                }
+                result.authorDetails = authorList;
 
                 return result;
             } catch (Exception ex)
@@ -71,8 +85,15 @@ namespace Konyvkereso.Services
         {
             try
             {
-                Uri detailedAuthorUri = new Uri(BooksApiUrl, key);
+                Uri detailedAuthorUri = new Uri(BooksApiUrl, String.Format("{0}.json", key));
                 AuthorDetail result = await GetAsync<AuthorDetail>(detailedAuthorUri);
+
+                // Get the author photo url for Image
+                if(result.photos != null)
+                {
+                    result.coverUrl = getCoverUrl(result.photos[0], CoverSize.Medium);
+                }
+
                 return result;
             } catch(Exception ex)
             {

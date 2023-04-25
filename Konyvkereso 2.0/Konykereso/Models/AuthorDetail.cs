@@ -27,6 +27,8 @@ namespace Konyvkereso.Models
         public int revision { get; set; }
         public Created created { get; set; }
         public Last_Modified last_modified { get; set; }
+
+        public string coverUrl { get; set; }
     }
 
     public class Remote_Ids
