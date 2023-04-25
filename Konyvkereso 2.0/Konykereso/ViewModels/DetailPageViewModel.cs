@@ -2,6 +2,7 @@
 using Konyvkereso.Services;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,6 +15,8 @@ namespace Konyvkereso.ViewModels
     {
         private readonly BookService bookService = new BookService();
 
+        public ObservableCollection<AuthorDetail> Authors { get; set; } = new ObservableCollection<AuthorDetail>();
+
         private BookDetail _book;
         public BookDetail Book
         {
@@ -25,24 +28,8 @@ namespace Konyvkereso.ViewModels
         {
             string bookKey = (string)parameter;
             Book = await bookService.getDetailedBookInfo(bookKey);
-            //Book.coverUrl = setCoverUrl(Book.covers[0], 2);
 
             await base.OnNavigatedToAsync(parameter, mode, state);
-        }
-
-        private string setCoverUrl(int coverID, int size)
-        {
-            switch(size)
-            {
-                case 0:
-                    return String.Format("https://covers.openlibrary.org/b/id/{0}-S.jpg", coverID);
-                case 1:
-                    return String.Format("https://covers.openlibrary.org/b/id/{0}-M.jpg", coverID);
-                case 2:
-                    return String.Format("https://covers.openlibrary.org/b/id/{0}-L.jpg", coverID);
-                default:
-                    return String.Format("https://covers.openlibrary.org/b/id/{0}-M.jpg", coverID);
-            }
         }
     }
 }

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Template10.Mvvm;
 using Template10.Services.NavigationService;
+using Template10.Utils;
 using Windows.UI.Xaml.Navigation;
 
 namespace Konyvkereso.ViewModels
@@ -66,25 +67,14 @@ namespace Konyvkereso.ViewModels
         {
             Results.Clear();
             var searchResult = await bookService.getBookByTitleAsynch(title);
-
-            foreach (var item in searchResult.Docs)
-            {
-                item.CoverUrl = String.Format("https://covers.openlibrary.org/b/id/{0}-M.jpg", item.Cover_i);
-                Results.Add(item);
-            }
+            Results.AddRange<Docs>(searchResult.Docs);
         }
 
         public async Task SearchByAuthor(string author)
         {
             Results.Clear();
             var searchResult = await bookService.getBookByAuthorAsynch(author);
-
-            foreach (var item in searchResult.Docs)
-            {
-                item.CoverUrl = String.Format("https://covers.openlibrary.org/b/id/{0}-M.jpg", item.Cover_i);
-                Results.Add(item);
-
-            }
+            Results.AddRange<Docs>(searchResult.Docs);
         }
 
         public void NavigateToDetailsPage(string bookPath)
